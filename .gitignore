@@ -1,0 +1,14 @@
+# IDE
+.idea/
+
+# Development database
+*.sqlite3
+
+# Python environment
+venv/
+
+# compiled python files
+*.pyc
+
+# secrets
+*_secrets.*
