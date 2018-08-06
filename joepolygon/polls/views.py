@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.template import loader
+from django.utils import timezone
 from django.urls import reverse
 from django.http import HttpResponse, Http404, HttpResponseRedirect
 
@@ -7,7 +8,9 @@ from .models import Question, Choice
 
 
 def index(request):
-    latest_question_list = Question.objects.order_by('-published_at')[:5]
+    latest_question_list = Question.objects.filter(
+        published_at__lte=timezone.now()).order_by('-published_at')[:5]
+
     context = {'latest_question_list': latest_question_list}
 
     # template = loader.get_template('polls/index.html')
@@ -23,6 +26,8 @@ def detail(request, question_id):
     #     raise Http404("Question does not exist")
     # replace the above with get_object_or_404
     question = get_object_or_404(Question, pk=question_id)
+    if question.published_at > timezone.now():
+        raise Http404
     context = {'question': question}
     return render(request, 'polls/detail.html', context)
 
