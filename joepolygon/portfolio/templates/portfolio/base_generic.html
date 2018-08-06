@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial_scale=1">
+  <title>{% block title %}{{title|default:"Joe Polygon DEFAULT"}}{% endblock %}</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static "portfolio/css/common.css" %}" type="text/css" media="screen">
+  {% block styles %}<!-- <link rel="stylesheet" href="{stylesheet}"> -->{% endblock %}
+  {% block scripts %}<!-- <script src="{javascript}" charset="utf-8"></script> -->{% endblock %}
+</head>
+<body>
+{% block header %}
+  <header>
+    <div id="LogoBlock"><a href="/"></a></div>
+    <h2>Projects, portfolio, and personal work of Joe Pelz</h2>
+    <ul>
+    {% for section in sections %}
+      <li><a href="#{{section}}"><div>{{section}}</div></a></li>
+    {% endfor %}
+    </ul>
+    <div class="rel"><div class="fadeout"></div></div>
+  </header>
+{% endblock %}
+
+{% block content %}{% endblock %}
+
+{% block footer %}
+  <footer>
+    <div class=""><p>&copy;2018 Joe Pelz</p></div>
+    <div class=""><p><a href="mailto:joe.pelz@gmail.com" target="_blank">Joe.Pelz@gmail.com</a></p></div>
+  </footer>
+{% endblock %}
+</body>
+</html>
