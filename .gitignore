@@ -10,5 +10,9 @@ venv/
 # compiled python files
 *.pyc
 
+# statically hosted files
+**/static/portfolio/downloads/
+**/static/portfolio/video/
+
 # secrets
 *_secrets.*
