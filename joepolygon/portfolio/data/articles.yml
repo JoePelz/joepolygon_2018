@@ -1,0 +1,31 @@
+---
+sections:
+- name: Programming
+  articles:
+    - name: Rix Compiler
+      path: rix
+      image: link.jpg
+      styles:
+        - "rix.css"
+    - name: Color Flip Puzzle
+      path: colorflip
+      image: link.jpg
+      scripts:
+        - "elm.js"
+- name: School
+  articles:
+    - name: Audio Processing
+      path: audiomixer
+      image: link.png
+- name: Artistry
+  articles:
+    - name: Kaleidoscope
+      path: kaleidoscope
+      image: link.jpg
+      style: kscope.css
+      script: kscope.js
+- name: Inspiration
+  articles:
+    - name: Inigo's Tutorials
+      path: http://www.iquilezles.org/www/index.htm
+      image: /static/portfolio/images/articles/InigoQuilez2.png

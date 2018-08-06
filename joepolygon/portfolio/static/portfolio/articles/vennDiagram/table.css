@@ -1,0 +1,22 @@
+table {
+  width: 100%;
+}
+tr {
+  line-height: 2em;
+}
+
+tr td:first-child {
+  font-weight: bold;
+  padding-left: 2em;
+  width: 2em;
+}
+
+tr td:nth-child(2) {
+  font-style: italic;
+  width: 7em;
+  text-align: center;
+}
+
+tr td:last-child {
+  padding-left: 1em;
+}

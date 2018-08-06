@@ -16,7 +16,10 @@ def index(request):
     # replace the above with the shortcut "render" function
     return render(request, 'portfolio/index.html', context)
 
-# <hr />
-# {% load static %}
-# <img src="{% static "polls/images/logo_wide_small.jpg" %}" alt="My image">
-# <hr />
+
+def article(request, article_name):
+    context = {
+        'title': article_name,
+        'sections': ["Programming", "School", "Artistry", "Inspiration"]
+    }
+    return render(request, 'portfolio/index.html', context)

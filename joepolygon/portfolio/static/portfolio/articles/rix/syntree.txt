@@ -1,0 +1,20 @@
+http://mshang.ca/syntree/
+
+[rix-program 
+[statements [statement [subject [variable [n]]][verb [equals ]][object [integer [5]]][EOL]]]
+
+[statements [statement
+[subject [variable[i]]]
+[verb [function[for]]]
+[object [integer[1]]]
+[comma]
+[object [subject[variable[n]]][verb[plus]][object[integer[1]]]]
+[EOL]]]
+
+[statements 
+[indent] 
+[statement [verb[function[print]]][object[variable[i]]][EOL]] 
+[unindent]
+]
+[EOF]
+]

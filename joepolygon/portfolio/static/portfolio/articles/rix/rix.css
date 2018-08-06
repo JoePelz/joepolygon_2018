@@ -1,0 +1,39 @@
+div.blocks, table {
+  margin: 1em auto;
+}
+tr.descriptive td {
+  font-style: italic;
+  font-family: inherit;
+}
+td {
+  border: 0.15em solid #C1BCE1;
+  padding: 0.5em 0.75em;
+  min-width: 1.5em;
+  text-align: center;
+  font-family: consolas, monospace;
+}
+.noborder {
+  border: 0 solid black;
+}
+#syntreeBox {
+  border: 0.15em dashed #C1BCE1;
+  overflow-x: scroll;
+}
+#syntreeBox img{
+  max-width: none;
+  margin: 0px;
+}
+acronym {
+  cursor:help;
+}
+
+div.blocks div {
+  display: inline-block;
+  border: 0.15em solid #C1BCE1;
+  margin-left: -0.15em;
+  margin-top: 0.1em;
+  padding: 0.5em 0.75em;
+  min-width: 1.5em;
+  text-align: center;
+  font-family: consolas, monospace;
+}

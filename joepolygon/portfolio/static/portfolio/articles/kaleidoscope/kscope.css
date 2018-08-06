@@ -1,0 +1,16 @@
+canvas {
+  display: block;
+  border: 1px solid black;
+  margin: 1em auto;
+}
+
+.interactive p {
+  display: block;
+  width: 480px;
+  margin:auto;
+}
+
+input {
+  font-size: 110%;
+  padding: 0.25em;
+}

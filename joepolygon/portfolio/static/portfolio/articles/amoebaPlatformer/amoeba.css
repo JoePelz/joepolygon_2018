@@ -1,0 +1,22 @@
+@keyframes bounce {
+    0%   {background-image: url("fuzzy.png");}
+    78%  {background-image: url("fuzzy.png");}
+    79%  {background-image: url("fuzzyFlat.png");}
+    86%  {background-image: url("fuzzyFlat.png");}
+    87%  {background-image: url("fuzzy.png");background-position: 50% 100%;}
+    100%  {background-image: url("fuzzy.png");background-position: 50% 0%;}
+}
+
+#dancingAmoeba {
+  width: 48px;
+  height: 96px;
+  background-image: url("/assets/articles/amoebaPlatformer/fuzzy.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 50% 100%;
+  animation-name: bounce;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-out;
+  animation-direction: alternate;
+}
