@@ -98,3 +98,17 @@ article h4 {
 .content p{
   margin-top 2em;
 }
+
+a[href^="http://"] h4:after,
+a[href^="https://"] h4:after{
+    content: "";
+    display: inline-block;
+    margin-left: 0.2em;
+    height: 0.75em;
+    width: 0.75em;
+    background-image: url("/static/portfolio/images/external_link.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
+    opacity: 0.75;
+}
