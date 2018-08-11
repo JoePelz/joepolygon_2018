@@ -2,7 +2,7 @@
 {% load static %}
 {% block title %}Joe Polygon{% endblock %}
 {% block styles %}
-  <link rel="stylesheet" href="{% static "portfolio/css/index.css" %}" type="text/css" media="screen">
+  <link rel="stylesheet" href="{% static "portfolio/css/index.css" %}" type="text/css">
 {% endblock %}
 {% block content %}
 <div id="SectionContainer">
@@ -12,11 +12,17 @@
 
   {% for section in sections %}
   <section id="{{section}}">
-      <h3>{{section}}</h3>
-      {articles}<article>
-        <a href="{articlePath}">
-        <img src="{articleImage}">
-          <h4>{articleTitle}</h4></a></article>{/articles}
+    <h3>{{section.name}}</h3>
+    {% for article in section.articles %}
+    <article>
+      {% if article.absolute_path %}
+        <a href="{{article.path}}">
+      {% else %}
+        <a href="{% url 'portfolio:article' article.path %}">
+      {% endif %}
+      <img src="{% static article.image %}">
+        <h4>{{article.name}}</h4></a></article>
+    {% endfor %}
   </section>
   {% endfor %}
   <div class="endFloat">&nbsp;</div>

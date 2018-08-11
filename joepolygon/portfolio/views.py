@@ -3,12 +3,15 @@ from django.template import loader
 from django.utils import timezone
 from django.urls import reverse
 from django.http import HttpResponse, Http404, HttpResponseRedirect
+from django.core.exceptions import ObjectDoesNotExist
 
+from .models import Articles
 
 def index(request):
     context = {
         'title': 'Joe Polygon',
-        'sections': ["Programming", "School", "Artistry", "Inspiration"]
+        'section_names': Articles.all_section_names(),
+        'sections': Articles.all_sections()
     }
 
     # template = loader.get_template('polls/index.html')
@@ -17,9 +20,15 @@ def index(request):
     return render(request, 'portfolio/index.html', context)
 
 
-def article(request, article_name):
+def article(request, article_path):
+    try:
+        article = Articles.find_by_path(article_path)
+    except ObjectDoesNotExist:
+        raise Http404
+
     context = {
-        'title': article_name,
-        'sections': ["Programming", "School", "Artistry", "Inspiration"]
+        'title': article.name,
+        'section_names': Articles.all_section_names(),
+        'article': article
     }
     return render(request, 'portfolio/index.html', context)

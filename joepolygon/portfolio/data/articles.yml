@@ -6,17 +6,83 @@ sections:
       path: rix
       image: link.jpg
       styles:
-        - "rix.css"
+        - rix.css
+    - name: Reversi AI
+      path: reversi
+      image: link.png
+    - name: "Image Morpher"
+      path: image-morpher
+      image: "link.jpg"
+    - name: "Amoeba Platformer"
+      path: amoeba-platformer
+      image: "link.jpg"
+      style: "amoeba.css"
+    - name: "Maze Generator"
+      path: maze-generator
+      image: "link.jpg"
+    - name: "PCM Encoder"
+      path: p-c-m-encoder
+      image: "link.jpg"
+    - name:  "Synthesizer Keyboard"
+      path: synthesizer-keyboard
+      image: "link.jpg"
+    - name:  Circuitry
+      path: circuitry
+      image: "link.jpg"
+    - name:  "Coding in Different Languages"
+      path: linguistics
+      image: "link.jpg"
+      script:
+        - "/assets/js/collapse.js"
+        - "extra.js"
+    - name:  "Generating Words and Language"
+      path: generating-language
+      image: "link.png"
+      script:
+        - "letters.js"
+        - "fragments.js"
+        - "intrigue.js"
+        - "latin.js"
     - name: Color Flip Puzzle
       path: colorflip
       image: link.jpg
       scripts:
-        - "elm.js"
+        - elm.js
 - name: School
   articles:
-    - name: Audio Processing
+    - name:  "Audio Processing"
       path: audiomixer
-      image: link.png
+      image: "link.png"
+    - name:  "Hamming Code"
+      path: hamming-code
+      image: "link.jpg"
+      script:
+        - "/assets/articles/hammingCode/elm.js"
+        - "/assets/js/collapse.js"
+    - name:  "IP Addresses"
+      path: ip-address
+      image: "link.jpg"
+      script:
+        - "/assets/articles/ipAddress/elm.js"
+    - name:  "Venn Diagram Generator"
+      path: venn-diagram
+      image: "link.jpg"
+      style:
+        - "/assets/articles/vennDiagram/table.css"
+      script:
+        - "/assets/articles/vennDiagram/elm.js"
+    - name:  "Binary Tree Builder"
+      path: binary-tree
+      image: "link.jpg"
+    - name:  "Edge Trigger, Flip Flop"
+      path: edge-trigger
+      image: "link.jpg"
+    - name:  "Paint Program"
+      path: paint
+      image: "link.jpg"
+    - name:  "Making 2048"
+      path: "2048"
+      image: "link.jpg"
 - name: Artistry
   articles:
     - name: Kaleidoscope
@@ -24,8 +90,35 @@ sections:
       image: link.jpg
       style: kscope.css
       script: kscope.js
+    - name:  Carepal
+      path: carepal
+      image: "link.jpg"
+    - name:  "ICE Nodes"
+      path: ice-nodes
+      image: "link.jpg"
+    - name:  "Nuke Expressions"
+      path: nuke-expressions
+      image: "link.jpg"
+    - name:  "Demo Reel 2011"
+      path: reel11
+      image: "link.jpg"
 - name: Inspiration
   articles:
-    - name: Inigo's Tutorials
-      path: http://www.iquilezles.org/www/index.htm
-      image: /static/portfolio/images/articles/InigoQuilez2.png
+    - name:  "Inigo's Tutorials"
+      path: "http://www.iquilezles.org/www/index.htm"
+      image: "/assets/images/articles/InigoQuilez2.png"
+    - name:  "This is Colossal"
+      path: "http://www.thisiscolossal.com"
+      image: "/assets/images/articles/thisIsColossal.jpg"
+    - name:  "The Demoscene"
+      path: demoscene
+      image: "link.jpg"
+    - name:  ".kkrieger"
+      path: "http://www.pouet.net/prod.php?which=12036"
+      image: "/assets/images/articles/kkreiger.jpg"
+    - name:  "acko.net"
+      path: "http://acko.net"
+      image: "/assets/images/articles/ackonet.jpg"
+    - name:  "Algorithm Visualization"
+      path: "http://bost.ocks.org/mike/algorithms/"
+      image: "/assets/images/articles/bostocksVisualizations.jpg"
