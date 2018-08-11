@@ -13,16 +13,14 @@
   {% for section in sections %}
   <section id="{{section}}">
     <h3>{{section.name}}</h3>
-    {% for article in section.articles %}
-    <article>
+    {% for article in section.articles %}<article>
       {% if article.absolute_path %}
         <a href="{{article.path}}">
       {% else %}
         <a href="{% url 'portfolio:article' article.path %}">
       {% endif %}
       <img src="{% static article.image %}">
-        <h4>{{article.name}}</h4></a></article>
-    {% endfor %}
+        <h4>{{article.name}}</h4></a></article>{% endfor %}
   </section>
   {% endfor %}
   <div class="endFloat">&nbsp;</div>
