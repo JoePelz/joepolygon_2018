@@ -106,19 +106,24 @@ sections:
   articles:
     - name:  "Inigo's Tutorials"
       path: "http://www.iquilezles.org/www/index.htm"
-      image: "/portfolio/images/articles/InigoQuilez2.png"
+      asset_path: inigo
+      image: "link.png"
     - name:  "This is Colossal"
       path: "http://www.thisiscolossal.com"
+      asset_path: this-is-colossal
       image: "/portfolio/images/articles/thisIsColossal.jpg"
     - name:  "The Demoscene"
       path: demoscene
       image: "link.jpg"
     - name:  ".kkrieger"
       path: "http://www.pouet.net/prod.php?which=12036"
-      image: "/portfolio/images/articles/kkreiger.jpg"
+      asset_path: kkrieger
+      image: "link.jpg"
     - name:  "acko.net"
       path: "http://acko.net"
-      image: "/portfolio/images/articles/ackonet.jpg"
+      asset_path: ackonet
+      image: "link.jpg"
     - name:  "Algorithm Visualization"
       path: "http://bost.ocks.org/mike/algorithms/"
-      image: "/portfolio/images/articles/bostocksVisualizations.jpg"
+      asset_path: bostocks
+      image: "link.jpg"

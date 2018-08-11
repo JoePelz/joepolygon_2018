@@ -2,11 +2,17 @@ import os
 import yaml
 import logging
 
-# Get an instance of a logger
-logger = logging.getLogger(__name__)
 from django.db import models
 from django.conf import settings
 from django.core.exceptions import ObjectDoesNotExist
+from .apps import PortfolioConfig
+
+# Get an instance of a logger
+logger = logging.getLogger(__name__)
+
+
+def url_join(*parts):
+    return '/'.join(s.strip('/') for s in parts)
 
 
 class Article:
@@ -15,30 +21,28 @@ class Article:
         self.name = article['name']
         self.path = article['path']
         self.absolute_path = self.path.startswith("http")
+        self.asset_path = article.get('asset_path', self.path)
 
-        if self.absolute_path:
-            base_path = "/"
-        else:
-            base_path = "portfolio/articles/{}/".format(self.path)
+        base_path = url_join(PortfolioConfig.name, 'articles', self.asset_path)
+
         if article['image'].startswith('/'):
             self.image = article['image']
         else:
-            self.image = base_path + article['image']
+            self.image = url_join(base_path, article['image'])
 
         self.styles = []
         for style in article.get('styles', []):
             if style.startswith('/'):
                 self.styles.append(style)
             else:
-                self.styles.append(base_path + style)
+                self.styles.append(url_join(self.asset_path, style))
 
         self.scripts = []
         for script in article.get('scripts', []):
             if script.startswith('/'):
                 self.styles.append(script)
             else:
-                self.styles.append(base_path + script)
-
+                self.styles.append(url_join(self.asset_path, script))
 
     def __str__(self):
         return "<Article: '{}'>".format(self.name)
@@ -103,7 +107,7 @@ class Articles:
     def find_by_path(path) -> Article:
         found = None
         for a in Articles.all():
-            if a.path == path:
+            if a.asset_path == path:
                 found = a
                 break
         if found is None:
