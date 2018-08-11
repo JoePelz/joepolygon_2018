@@ -44,7 +44,7 @@ sections:
         - "intrigue.js"
         - "latin.js"
     - name: Color Flip Puzzle
-      path: colorflip
+      path: color-flip
       image: link.jpg
       scripts:
         - elm.js
@@ -106,19 +106,19 @@ sections:
   articles:
     - name:  "Inigo's Tutorials"
       path: "http://www.iquilezles.org/www/index.htm"
-      image: "/assets/images/articles/InigoQuilez2.png"
+      image: "/portfolio/images/articles/InigoQuilez2.png"
     - name:  "This is Colossal"
       path: "http://www.thisiscolossal.com"
-      image: "/assets/images/articles/thisIsColossal.jpg"
+      image: "/portfolio/images/articles/thisIsColossal.jpg"
     - name:  "The Demoscene"
       path: demoscene
       image: "link.jpg"
     - name:  ".kkrieger"
       path: "http://www.pouet.net/prod.php?which=12036"
-      image: "/assets/images/articles/kkreiger.jpg"
+      image: "/portfolio/images/articles/kkreiger.jpg"
     - name:  "acko.net"
       path: "http://acko.net"
-      image: "/assets/images/articles/ackonet.jpg"
+      image: "/portfolio/images/articles/ackonet.jpg"
     - name:  "Algorithm Visualization"
       path: "http://bost.ocks.org/mike/algorithms/"
-      image: "/assets/images/articles/bostocksVisualizations.jpg"
+      image: "/portfolio/images/articles/bostocksVisualizations.jpg"
