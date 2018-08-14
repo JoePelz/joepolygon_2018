@@ -35,7 +35,7 @@ sections:
       image: "link.jpg"
       scripts:
         - extra.js
-        - "/assets/js/collapse.js"
+        - "/portfolio/js/collapse.js"
     - name:  "Generating Words and Language"
       path: generating-language
       image: "link.png"
@@ -58,13 +58,13 @@ sections:
       path: hamming-code
       image: "link.jpg"
       scripts:
-        - "elm.js"
-        - "/assets/js/collapse.js"
+        - elm.js
+        - "/portfolio/js/collapse.js"
     - name:  "IP Addresses"
       path: ip-address
       image: "link.jpg"
       scripts:
-        - "elm.js"
+        - elm.js
     - name:  "Venn Diagram Generator"
       path: venn-diagram
       image: "link.jpg"
