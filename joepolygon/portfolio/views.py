@@ -29,6 +29,8 @@ def article(request, article_path):
     context = {
         'title': article.name,
         'section_names': Articles.all_section_names(),
-        'article': article
+        'javascripts': article.scripts,
+        'stylesheets': article.styles,
+        'content_path': '{}/index.html'.format(article.asset_path)
     }
-    return render(request, 'portfolio/index.html', context)
+    return render(request, 'portfolio/article.html', context)

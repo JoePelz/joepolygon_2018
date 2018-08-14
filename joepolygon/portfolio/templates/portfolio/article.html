@@ -1,0 +1,15 @@
+{% extends "portfolio/base_generic.html" %}
+{% load static %}
+{% block title %}Joe Polygon{% endblock %}
+{% block styles %}
+  <link rel="stylesheet" href="{% static "portfolio/css/article.css" %}" type="text/css">
+  {% for style in stylesheets %}
+  <link rel="stylesheet" href="{% static style %}" type="text/css">
+  {% endfor %}
+{% endblock %}
+{% block scripts %}
+  {% for script in javascripts %}
+  <script src="{% static script %}" charset="utf-8"></script>
+  {% endfor %}
+{% endblock %}
+{% block content %}{% include content_path %}{% endblock %}

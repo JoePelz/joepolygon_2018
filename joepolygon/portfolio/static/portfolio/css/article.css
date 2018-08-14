@@ -217,7 +217,7 @@ a[href^="https://"]:after{
     display: inline-block;
     height: 1em;
     width: 1.1em;
-    background-image: url("/assets/images/external_link.png");
+    background-image: url("/static/portfolio/images/external_link.png");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: right;

@@ -1,9 +1,9 @@
   <div id="SectionContainer">
     <h1>Generating Words and Language</h1>
     <p>Lorem ipsum dolor sit amet.</p>
-  </div>
+  </div>{% load static %}
   <div class="content">
-    <div class="center"><img src="/assets/articles/generatingLanguage/link.png"></div>
+    <div class="center"><img src="{% static "portfolio/articles/generatingLanguage/link.png" %}"></div>
     <p>Generating random words and sentences has been an interest of mine for a while now.  I’ve taken a few different approaches would like to share what I’ve come up with.</p>
     <p>One of the first, and simplest methods is just to generate a list of what letters are allowed to be followed by what other letters.   You could do it all manually, but it’s much faster to pre-parse a dictionary such as <a href="/assets/articles/generatingLanguage/dictionary.txt">this one</a> (1.7MB, 170,000 words).  Interestingly, once the dictionary was processed, it became a mere 10KB <a href="/assets/articles/generatingLanguage/letterFollows.json">rulebook</a>.</p>
     <div class="centered widthLimit interactive">

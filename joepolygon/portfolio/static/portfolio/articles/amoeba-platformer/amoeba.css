@@ -10,7 +10,7 @@
 #dancingAmoeba {
   width: 48px;
   height: 96px;
-  background-image: url("/assets/articles/amoebaPlatformer/fuzzy.png");
+  background-image: url("/static/portfolio/articles/amoeba-platformer/fuzzy.png");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: 50% 100%;

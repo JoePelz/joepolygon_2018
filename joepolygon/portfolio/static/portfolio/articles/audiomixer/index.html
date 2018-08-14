@@ -1,11 +1,11 @@
   <div id="SectionContainer">
     <h1>Audio Processing</h1>
     <p>Can you hear me now?</p>
-  </div>
+  </div>{% load static %}
   <div class="content">
     <p>This was a term-long school assignment, during fall of 2015.  It was an opportunity to explore a wide range of concepts, many of which were completely new to me.</p>
     <p>The complete program allowed a user to open, create, edit and save audio files.  Within the application you can view the waveform and frequencies, and select time ranges, and then cut, copy and paste samples.  With some samples selected you can amplify them, reverse them, and even change the pitch for some fun effects. You can change sampling rate and bit rate too.</p>
-    <div class="center"><img src="/assets/articles/audiomixer/waveform.png"></div>
+    <div class="center"><img src="{% static "portfolio/articles/audiomixer/waveform.png" %}"></div>
     <p>By the end of this project I had my first programming experience in:</p>
     <div class="widthLimit"><ul>
       <li>Low-level Win32 multimedia functions WaveIn* and WaveOut*</li>
@@ -28,6 +28,6 @@
           <li>Keep only every D sample in your samples and discard the rest.</li>
         </ol>The ratio (N/D) is the ratio of speed (and pitch) adjustment you’ve just applied. Cool eh?</dd>
     </dl></div>
-    <div class="center"><img src="/assets/articles/audiomixer/mixer.png"></div>
+    <div class="center"><img src="{% static "portfolio/articles/audiomixer/mixer.png" %}"></div>
     <p>The complete project is hosted on <a href="https://github.com/JoePelz/DSPProject">on GitHub</a>, with a small description of how to use it.</p>
   <div class="endFloat">&nbsp;</div></div>

@@ -49,7 +49,7 @@ ROOT_URLCONF = 'joepolygon.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join('portfolio', 'static', 'portfolio', 'articles')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

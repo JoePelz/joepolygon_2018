@@ -35,14 +35,14 @@ class Article:
             if style.startswith('/'):
                 self.styles.append(style)
             else:
-                self.styles.append(url_join(self.asset_path, style))
+                self.styles.append(url_join(base_path, style))
 
         self.scripts = []
         for script in article.get('scripts', []):
             if script.startswith('/'):
-                self.styles.append(script)
+                self.scripts.append(script)
             else:
-                self.styles.append(url_join(self.asset_path, script))
+                self.scripts.append(url_join(base_path, script))
 
     def __str__(self):
         return "<Article: '{}'>".format(self.name)

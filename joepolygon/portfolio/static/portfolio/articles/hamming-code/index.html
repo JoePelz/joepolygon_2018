@@ -1,7 +1,7 @@
   <div id="SectionContainer">
     <h1>Hamming Code</h1>
     <p>Becau7se aXdding pu}rely *random chaQracters doesn'2t increasPe reBliabili!ty</p>
-  </div>
+  </div>{% load static %}
   <div class="content">
     <p>In my Computer Architecture class and my Data Communications classes we discussed the fact that sometimes people mishear each other and don't realize it. Or more technically, when you're receiving information, how do you know if you're receiving correctly what the sender sent you?  That's the motivation for error detecting/correcting codes. There's a variety of codes, with checksums possibly being the most well known, but we had studied Hamming Code in the most detail when I built this.</p>
     <p>Hamming code works at the bit level and adds approximately log<sub>2</sub><span class="italic">n</span> additional bits to an <span class="italic">n</span>-bit data word. It will detect an error if at most 2 bits are corrupted, and can be used to correct an error if a single bit is corrupted.</p>
