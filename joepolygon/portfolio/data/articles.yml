@@ -33,16 +33,16 @@ sections:
       path: linguistics
       image: "link.jpg"
       script:
+        - extra.js
         - "/assets/js/collapse.js"
-        - "extra.js"
     - name:  "Generating Words and Language"
       path: generating-language
       image: "link.png"
       script:
-        - "letters.js"
-        - "fragments.js"
-        - "intrigue.js"
-        - "latin.js"
+        - letters.js
+        - fragments.js
+        - intrigue.js
+        - latin.js
     - name: Color Flip Puzzle
       path: color-flip
       image: link.jpg
@@ -57,20 +57,20 @@ sections:
       path: hamming-code
       image: "link.jpg"
       script:
-        - "/assets/articles/hammingCode/elm.js"
+        - "elm.js"
         - "/assets/js/collapse.js"
     - name:  "IP Addresses"
       path: ip-address
       image: "link.jpg"
       script:
-        - "/assets/articles/ipAddress/elm.js"
+        - "elm.js"
     - name:  "Venn Diagram Generator"
       path: venn-diagram
       image: "link.jpg"
       style:
-        - "/assets/articles/vennDiagram/table.css"
+        - "table.css"
       script:
-        - "/assets/articles/vennDiagram/elm.js"
+        - "elm.js"
     - name:  "Binary Tree Builder"
       path: binary-tree
       image: "link.jpg"
