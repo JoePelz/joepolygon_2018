@@ -1,10 +1,13 @@
 import os
 import yaml
 import logging
+import requests
+import re
 
 from django.db import models
 from django.conf import settings
 from django.core.exceptions import ObjectDoesNotExist
+from django.contrib.staticfiles.templatetags.staticfiles import static
 from .apps import PortfolioConfig
 
 # Get an instance of a logger
@@ -113,3 +116,76 @@ class Articles:
         if found is None:
             raise ObjectDoesNotExist
         return found
+
+
+class KaleidoscopeUpload:
+    FOLDER_NAME = 'uploads'
+
+    @staticmethod
+    def file_folder():
+        return os.path.join(settings.BASE_DIR, 'portfolio', 'static', 'portfolio', 'articles', 'kaleidoscope', KaleidoscopeUpload.FOLDER_NAME)
+
+    @staticmethod
+    def static_path():
+        return '/'.join(['portfolio', 'articles', 'kaleidoscope', KaleidoscopeUpload.FOLDER_NAME])
+
+    @staticmethod
+    def get_next_id():
+        dir = KaleidoscopeUpload.file_folder()
+        items = os.listdir(dir)
+        if len(items) == 0:
+            return "1"
+
+        latest = None
+        latest_time = 0
+        for item in items:
+            created_at = os.path.getctime(os.path.join(dir, item))
+            if created_at > latest_time:
+                latest = item
+                latest_time = created_at
+        return str((int(latest.split(".")[0]) + 1) % 100)
+
+    @staticmethod
+    def safe_to_download(url):
+        h = requests.head(url, allow_redirects=True)
+        header = h.headers
+        content_type = header.get('content-type')
+        if 'image' not in content_type.lower():
+            return False
+
+        content_length = header.get('content-length', None)
+        if content_length and int(content_length) > 2**25:  # 32MB
+            return False
+
+        return True
+
+    @staticmethod
+    def get_filename_from_cd(cd):
+        """
+        Get filename from content-disposition
+        # From https://www.codementor.io/aviaryan/downloading-files-from-urls-in-python-77q3bs0un
+        """
+        if not cd:
+            return None
+        fname = re.findall('filename=(.+)', cd)
+        if len(fname) == 0:
+            return None
+        return fname[0]
+
+    @staticmethod
+    def create(url):
+        if not KaleidoscopeUpload.safe_to_download(url):
+            raise AttributeError("no.")
+        r = requests.get(url, allow_redirects=True)
+        filename = KaleidoscopeUpload.get_filename_from_cd(r.headers.get('content-disposition'))
+        if not filename:
+            filename = url.rsplit("/", 1)[-1]
+        extension = filename.split('.')[-1]
+        image_id = KaleidoscopeUpload.get_next_id()
+        image_name = "{}.{}".format(image_id, extension)
+        image_path = os.path.join(KaleidoscopeUpload.file_folder(), image_name)
+        static_path = "{}/{}".format(KaleidoscopeUpload.static_path(), image_name)
+
+        with open(image_path, 'wb') as f:
+            f.write(r.content)
+        return static_path

@@ -3,7 +3,7 @@
     <p>Searching for how to build nuke nodes has probably landed me on a watch list somewhere</p>
   </div>{% load static %}
   <div class="content">
-    <div class="center"><img src="{% static "portfolio/articles/nukeExpressions/mergeExpression.png" %}"></div>
+    <div class="center"><img src="{% static "portfolio/articles/nuke-expressions/mergeExpression.png" %}"></div>
     <p>Nuke expressions are so cool.  It took me a while to understand how to use them but they are really powerful in what they can do.  What they let you do is provide an equation for each pixel of the image. You have access to several built in variables, and the ability to define a few of your own.  There's a library of built in functions you have access too as well.  And it runs fast too!</p>
     <p>A (non-comprehensive) rundown of the tools in the expression node are:</p>
     <div class="widthLimit">
@@ -30,7 +30,7 @@
       <li></li>
       <li>rgba = clamp(1 - dist/radius, 0, 1)</li>
     </ol></div>
-    <div class="widthLimit center"><img src="{% static "portfolio/articles/nukeExpressions/circle.jpg" %}"></div>
+    <div class="widthLimit center"><img src="{% static "portfolio/articles/nuke-expressions/circle.jpg" %}"></div>
     <p>One expression I used recently was to ease into scaling an image to the left of a particular x coordinate. It went like this:</p>
     <div class="widthLimit"><ol class="code">
       <li>offset = 400</li>
@@ -43,9 +43,9 @@
       <li>b = valid ? b(newX, y) : b</li>
       <li>a = valid ? a(newX, y) : a</li>
     </ol></div>
-    <div class="widthLimit center"><img src="{% static "portfolio/articles/nukeExpressions/transform.jpg" %}"></div>
+    <div class="widthLimit center"><img src="{% static "portfolio/articles/nuke-expressions/transform.jpg" %}"></div>
     <p>You can take it pretty far with expressions. I built a mandelbrot fractal and kaleidoscope nodes out of expressions.  The kaleidoscope was particularly fun to play with.</p>
-    <div class="widthLimit center"><img src="{% static "portfolio/articles/nukeExpressions/kaleidobrot.jpg" %}"></div>
+    <div class="widthLimit center"><img src="{% static "portfolio/articles/nuke-expressions/kaleidobrot.jpg" %}"></div>
     <p>In summary, nuke nodes are fun. They're worth learning to use and being played around with. They can do some really powerful things if you have the math mind to express what you're trying to do.</p>
-    <p>Download my collection of saved nuke gizmos <a type="application/x-7z-compressed" href="/assets/articles/nukeExpressions/gizmos.7z" download>here</a> for your fun and learning.  Nuke is available for <a href="http://www.thefoundry.co.uk/products/nuke/non-commercial/">free for non-commercial purposes</a> as of mid-2015. Yay!</p>
+    <p>Download my collection of saved nuke gizmos <a type="application/x-7z-compressed" href="{% static "portfolio/downloads/nukeExpressions/gizmos.7z" %}" download>here</a> for your fun and learning.  Nuke is available for <a href="http://www.thefoundry.co.uk/products/nuke/non-commercial/">free for non-commercial purposes</a> as of mid-2015. Yay!</p>
   <div class="endFloat">&nbsp;</div></div>

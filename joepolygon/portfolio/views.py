@@ -1,11 +1,15 @@
+import requests
+
 from django.shortcuts import render, get_object_or_404
 from django.template import loader
 from django.utils import timezone
 from django.urls import reverse
+from django.conf import settings
 from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.core.exceptions import ObjectDoesNotExist
+from django.contrib.staticfiles.templatetags.staticfiles import static
 
-from .models import Articles
+from .models import Articles, KaleidoscopeUpload
 
 def index(request):
     context = {
@@ -34,3 +38,9 @@ def article(request, article_path):
         'content_path': '{}/index.html'.format(article.asset_path)
     }
     return render(request, 'portfolio/article.html', context)
+
+
+def upload(request):
+    url = request.GET.get('url', '')
+    uploaded_path = KaleidoscopeUpload.create(url)
+    return HttpResponse(static(uploaded_path))

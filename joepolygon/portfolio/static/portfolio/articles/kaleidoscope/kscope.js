@@ -55,7 +55,7 @@ function init() {
 
   bg = new Image();
   bg.onload = imageLoaded;
-  bg.src = '/assets/articles/kaleidoscope/barbie.jpg';
+  bg.src = '/static/portfolio/articles/kaleidoscope/barbie.jpg';
 }
 
 
@@ -100,11 +100,11 @@ function handleUpload(e) {
 function handleURL() {
   var URLLoader = document.getElementById('URLLoader');
   var xi=new XMLHttpRequest();
-  xi.open("GET","/assets/articles/kaleidoscope/getImage.php?url="+encodeURI(URLLoader.value),true);
+  xi.open("GET","/portfolio/articles/kaleidoscope/upload?url="+encodeURI(URLLoader.value),true);
   xi.send();
 
   xi.onreadystatechange=function() {
-    if(xi.readyState==4 && xi.status==200) {
+    if(xi.readyState==4 && xi.status>=200 && xi.status<300) {
       bg=new Image;
       bg.onload = imageLoaded;
       bg.src=xi.responseText;

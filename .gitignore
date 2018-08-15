@@ -16,3 +16,6 @@ venv/
 
 # secrets
 *_secrets.*
+
+# ephemeral files
+**/uploads/*
