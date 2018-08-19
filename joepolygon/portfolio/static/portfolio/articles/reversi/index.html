@@ -31,6 +31,6 @@
     <p><span class="bold">ProofNumber</span> builds an what’s called an <a href="https://en.wikipedia.org/wiki/And–or_tree">AND-OR tree</a> as its game tree.  The AI continuously expands the most easily proved branch of the tree, where proving a branch means you win.  Your move options are considered ORs and the enemy’s are ANDs, and the provability of a branch is based on counting up the ANDs and choosing the OR that leads to the fewest ANDs. The outcome is that the computer tries to be controlling and minimize your move options, while steering towards the shortest game possible.</p>
     <div class="center"><figure><img src="{% static "portfolio/articles/reversi/reversiStats.png" %}"><figcaption>Statistics screen shown upon pressing [Stats] after a match vs NegaMax.</figcaption></figure></div>
     <p>AI in games has been an interesting experiment so far.  As an unrelated bonus, I am now a much better player of Reversi.  Next steps are to implement a learning algorithm that would use a neural net and learn how to play the game.</p>
-    <p><a type="application/x-msdownload" href="{% "portfolio/downloads/reversi/ReversiAI.exe" %}" download>Download</a> the Windows executable file for the game</p>
+    <p><a type="application/x-msdownload" href="{% static "portfolio/downloads/reversi/ReversiAI.exe" %}" download>Download</a> the Windows executable file for the game</p>
     <p>or check it out on <a href="https://github.com/JoePelz/ReversiAI">GitHub</a></p>
   <div class="endFloat">&nbsp;</div></div>
